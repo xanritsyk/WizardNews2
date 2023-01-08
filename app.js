@@ -57,8 +57,8 @@ const posts=postBank.list();
         </div>`
       ).join('')}
     </div>
-      </body>
-      </html>`; 
+    </body>
+  </html>`; 
 res.send(html);
 });
 const PORT = 1337;
