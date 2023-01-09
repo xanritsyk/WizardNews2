@@ -4,6 +4,7 @@ const postBank= require("./postBank");
 const morgan = require ("morgan");
 const path = require('path');
 postBank.find();
+// const DATABASE_URL = "postgres://wizardnews_szvt_user:1YdLpKbiQXgIPwv7q0UitAbYEZ5bNVFi@dpg-cetm869gp3jmgl1imb6g-a.ohio-postgres.render.com/wizardnews_szvt"
 
 app.use(morgan('dev'));
 app.use(express.static('public'));
@@ -13,7 +14,7 @@ app.get('/posts/:id', (req, res, next) => {
     const id = req.params.id
     const post = postBank.find(id)
     if (!post.id) {
-      // If the post wasn't found, set the HTTP status to 404 and send Not Found HTML
+
       res.status(404)
       const html = `
       <!DOCTYPE html>
